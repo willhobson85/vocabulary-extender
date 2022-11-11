@@ -5,12 +5,17 @@ class Form extends Component {
   constructor() {
     super()
     this.state = {
-      word: ''
+      word: []
     }
   }
 
   handleChange = event => {
+    console.log('event name', event.target.name)
+    console.log('event value', event.target.value)
     this.setState({ [event.target.name]: event.target.value })
+    // event.target.name is "word" from 42. I need to use the value for the key in set state, and pass the results from the fetch as the value for setState
+    // I think I just need to setState in the getWord method. 
+    // Or I need to pass the name and id from newWord up to app.
   }
 
   getWord = event => {
