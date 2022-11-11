@@ -1,7 +1,8 @@
 import React from "react";
+// import Tile from "../Tile/Tile.js"
 import './MainPage.css'
 
-const MainContainer = () => {
+const MainContainer = ({ wordList }) => {
     
   return (
     <div className='main-container'>

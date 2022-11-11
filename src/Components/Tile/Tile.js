@@ -1,6 +1,7 @@
 import React from "react";
 
 function Tile() {
+  // still need to pass props here
   return (
       <div className="tile">
           <h2>Title</h2>
