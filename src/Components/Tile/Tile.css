@@ -9,3 +9,8 @@
 .remove-button {
 
 } */
+
+.tile-pos {
+  text-transform: capitalize;
+  text-decoration: underline;
+}

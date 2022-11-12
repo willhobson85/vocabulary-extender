@@ -20,7 +20,6 @@ class Form extends Component {
           ...this.state
       }
       this.props.searchWord(newWord)
-      console.log(newWord)
       this.resetForm()
   }
 

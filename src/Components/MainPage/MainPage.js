@@ -1,12 +1,14 @@
 import React from "react";
-// import Tile from "../Tile/Tile.js"
+import Tile from "../Tile/Tile.js"
 import './MainPage.css'
 
-const MainContainer = ({ wordList }) => {
-    
+const MainContainer = ({ wordList, removeTile }) => {
+
+  const tiles = wordList.map(newWord => <Tile key={newWord.id} props={newWord} removeTile={removeTile} />)
+
   return (
-    <div className='main-container'>
-      <h2>This will hold the searched words.</h2>
+    <div className="tile-container">
+      {tiles}
     </div>
   )
 }
