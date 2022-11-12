@@ -1,22 +1,47 @@
 import React from "react";
 import './Tile.css'
 
-function Tile( {myStuff, removeTile} ) {
+function Tile( {props, removeTile} ) {
+  const displayResults = (partOfSpeech) => {
+    let synonyms = ''
+    let antonyms = ''
+    if (!props[partOfSpeech]) {
+      return null
+    }
+    if (props[partOfSpeech].syn) {
+      synonyms = 
+      <>
+        <h4>Syn: </h4>
+        <p>{props[partOfSpeech].syn.join(', ')}</p>
+      </>
+    }
+    if (props[partOfSpeech].ant) {
+      antonyms = 
+      <>
+        <h4>Ant: </h4>
+        <p>{props[partOfSpeech].ant.join(', ')}</p>
+      </>
+    }
+    
+    return (
+      <>
+        <h3 className="tile-pos">{partOfSpeech}</h3>
+        {synonyms}
+        {antonyms}
+      </> 
+    )
+  }
 
   return (
       <div className="tile">
-          <h2>{myStuff.word}</h2>
-
-          {myStuff.adjective.syn.length > 0 ? 
-          <>
-            <h3>Adjective</h3>
-            <h3>Syn: </h3>
-            <p>{myStuff.adjective.syn.join(', ')}</p>
-            <h3>Ant: </h3>
-          </> : 'No results'}
+          <h2>{props.word}</h2>
+          {displayResults('adjective')}
+          {displayResults('noun')}
+          {displayResults('adverb')}
+          {displayResults('verb')}
 
           <button className='saveButton'>Save for later</button>
-          <button className='removeButton' onClick={() => removeTile(myStuff.id)}>Remove</button>
+          <button className='removeButton' onClick={() => removeTile(props.id)}>Remove</button>
       </div>
   )
 }

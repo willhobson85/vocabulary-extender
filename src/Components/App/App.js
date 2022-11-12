@@ -9,7 +9,8 @@ class App extends Component {
     super()
     this.state = {
       wordList: [],
-      savedForLater: []
+      savedForLater: [],
+      errorMessage: ''
     }
   }
 
@@ -35,7 +36,7 @@ class App extends Component {
       <main className='home'>
         <h1>This will contain the main container</h1>
         <Form  searchWord={this.searchWord} />
-        <MainContainer wordList={this.state.wordList} removeTile={this.removeTile} />
+        <MainContainer wordList={this.state.wordList} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
       </main>
     );
   }

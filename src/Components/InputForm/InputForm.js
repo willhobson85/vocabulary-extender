@@ -5,7 +5,7 @@ class Form extends Component {
   constructor() {
     super()
     this.state = {
-      word: {}
+      word: ''
     }
   }
 
@@ -20,7 +20,6 @@ class Form extends Component {
           ...this.state
       }
       this.props.searchWord(newWord)
-      console.log('newWord', newWord)
       this.resetForm()
   }
 
