@@ -2,18 +2,14 @@ import React from "react";
 import Tile from "../Tile/Tile.js"
 import './MainPage.css'
 
-const MainContainer = ({ wordList }) => {
-    
+const MainContainer = ({ wordList, removeTile }) => {
+
+  const tiles = wordList.map(newWord => <Tile key={newWord.id} myStuff={newWord} removeTile={removeTile} />)
+
   return (
-    <Tile 
-      // key={word.id}
-      // id={word.id}
-      // title={word.title}
-      // body={word.body}
-      // favoriteButton={word.favoriteButton}
-      // saveButton={word.saveButton}
-      // removeCard={removeCard}
-    />
+    <div className="tile-container">
+      {tiles}
+    </div>
   )
 }
 

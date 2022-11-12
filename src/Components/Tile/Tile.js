@@ -1,20 +1,22 @@
 import React from "react";
 import './Tile.css'
 
-function Tile() {
-  // still need to pass props here
-  //word[partOfSpeech].syn
-  //word[partOfSpeech].ant
-  // I think I'll need to do a reduce to create sections on the tile
-  // const wordDetails = props.reduce((acc, word) => {
+function Tile( {myStuff, removeTile} ) {
 
-  // }, {})
   return (
       <div className="tile">
-          <h2>Tile Title</h2>
-          <h3>Placeholder Text</h3>
+          <h2>{myStuff.word}</h2>
+
+          {myStuff.adjective.syn.length > 0 ? 
+          <>
+            <h3>Adjective</h3>
+            <h3>Syn: </h3>
+            <p>{myStuff.adjective.syn.join(', ')}</p>
+            <h3>Ant: </h3>
+          </> : 'No results'}
+
           <button className='saveButton'>Save for later</button>
-          <button className='removeButton'>Remove</button>
+          <button className='removeButton' onClick={() => removeTile(myStuff.id)}>Remove</button>
       </div>
   )
 }
