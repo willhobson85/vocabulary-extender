@@ -25,7 +25,7 @@ function Tile( {props, removeTile} ) {
     
     return (
       <>
-        <h3 className="tile-pos">{partOfSpeech}</h3>
+        <h3 className="tile-heads">{partOfSpeech}</h3>
         {synonyms}
         {antonyms}
       </> 
@@ -34,14 +34,15 @@ function Tile( {props, removeTile} ) {
 
   return (
       <div className="tile">
-          <h2>{props.word}</h2>
+          <h2 className="tile-title">{props.word}</h2>
           {displayResults('adjective')}
           {displayResults('noun')}
           {displayResults('adverb')}
           {displayResults('verb')}
-
-          <button className='saveButton'>Save for later</button>
-          <button className='removeButton' onClick={() => removeTile(props.id)}>Remove</button>
+          <div className="buttons">
+            <button className='saveButton'>Save for later</button>
+            <button className='removeButton' onClick={() => removeTile(props.id)}>Remove</button>
+          </div>
       </div>
   )
 }

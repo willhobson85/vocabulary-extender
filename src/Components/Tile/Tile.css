@@ -1,16 +1,28 @@
 .tile {
-  border: 2px solid black;
+  border: 1px solid black;
+  height: 30vh;
+  width: 25vw;
+  overflow: auto;
+  margin-top: 2vh;
+  
 }
 
-/* .save-button {
-
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.remove-button {
-
-} */
-
-.tile-pos {
+.tile-heads {
   text-transform: capitalize;
   text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.p, .tile-title {
+  text-transform: capitalize;
+}
+
+p, h4 {
+  margin: 5px;
 }

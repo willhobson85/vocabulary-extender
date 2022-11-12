@@ -34,9 +34,10 @@ class App extends Component {
   render() {
     return (
       <main className='home'>
-        <h1>This will contain the main container</h1>
+        <h1>I want to make a header/title card</h1>
         <Form  searchWord={this.searchWord} />
         <MainContainer wordList={this.state.wordList} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
+        <h2>This will be a footer</h2>
       </main>
     );
   }
