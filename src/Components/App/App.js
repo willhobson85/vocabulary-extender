@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import MainContainer from '../MainPage/MainPage';
+import SavedContainer from '../SavedPage/SavedPage';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Form from "../InputForm/InputForm"
@@ -54,7 +55,7 @@ class App extends Component {
           <Header searchWord={this.searchWord}/>
           <Switch>
             <Route path="/savedWords">
-
+              <SavedContainer savedWords={this.state.savedWords} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
             </Route>
             <Route path="/">
               <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
