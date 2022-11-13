@@ -12,10 +12,16 @@
   padding-bottom: 1vh;
 }
 
-.goToSaved {
+.goHome {
   margin-left: 3vw;
 }
 
 .search-box {
   margin-right: 3vw;
+}
+
+.navigation {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
 }

@@ -52,14 +52,12 @@ class App extends Component {
     console.log('word list', this.state.wordList)
     return (
       <main className='home'>
-        {/* <Router> */}
           <Header searchWord={this.searchWord}/>
           <Switch>
             <Route exact path="/savedPage" render={() => <SavedContainer savedWords={this.state.savedWords} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />} />
             <Route path="/" render={() => <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />} />
           </Switch>
           <Footer />
-        {/* </Router> */}
       </main>
     );
   }
