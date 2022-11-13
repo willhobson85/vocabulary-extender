@@ -1,6 +1,6 @@
 .home {
   height: 100vh;
-  width: 97vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

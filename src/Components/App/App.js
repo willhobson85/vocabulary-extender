@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import MainContainer from '../MainPage/MainPage';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Form from "../InputForm/InputForm"
+import SavedPage from "../SavedPage/SavedPage"
 import { fetchData } from '../../apiCalls';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link
 } from "react-router-dom";
 
 class App extends Component {
@@ -53,11 +54,21 @@ class App extends Component {
         <Router>
           <Header searchWord={this.searchWord}/>
           <Switch>
-            <Route path="/savedWords">
-
+            <Route path="/:id">
+              <SavedPage
+                wordList={this.state.wordList} 
+                savedWords={this.state.savedWords}
+                saveTile={this.saveTile} 
+                removeTile={this.removeTile} errorMessage={this.state.errorMessage}
+              />
             </Route>
             <Route path="/">
-              <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
+              <>
+                <Link to="/savedWords">
+                <button className="goToSaved">Saved Words</button>
+                </Link>
+                <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
+              </>
             </Route>
           </Switch>
           <Footer />
