@@ -5,6 +5,11 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Form from "../InputForm/InputForm"
 import { fetchData } from '../../apiCalls';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -43,16 +48,24 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state)
     return (
       <main className='home'>
-        <Header searchWord={this.searchWord}/>
-        <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
-        <Footer />
+        <Router>
+          <Header searchWord={this.searchWord}/>
+          <Switch>
+            <Route path="/savedWords">
+
+            </Route>
+            <Route path="/">
+              <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
       </main>
     );
   }
-
+  
 }
 
 export default App;
