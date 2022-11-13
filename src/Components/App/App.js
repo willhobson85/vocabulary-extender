@@ -1,6 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
 import MainContainer from '../MainPage/MainPage';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Form from "../InputForm/InputForm"
 import { fetchData } from '../../apiCalls';
 
@@ -34,10 +36,10 @@ class App extends Component {
   render() {
     return (
       <main className='home'>
-        <h1>I want to make a header/title card</h1>
-        <Form  searchWord={this.searchWord} />
+        <Header searchWord={this.searchWord}/>
+        {/* <Form  searchWord={this.searchWord} /> */}
         <MainContainer wordList={this.state.wordList} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
-        <h2>This will be a footer</h2>
+        <Footer />
       </main>
     );
   }

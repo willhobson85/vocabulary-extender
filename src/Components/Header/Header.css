@@ -1,0 +1,17 @@
+.app-head {
+  border: 2px solid black;
+  height: 25vh;
+  width: 100vw;
+  background-image: url('../../Assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #7A88B8;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.goToSaved {
+  margin-left: 3vw;
+}
