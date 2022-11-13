@@ -1,6 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
 import MainContainer from '../MainPage/MainPage';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Form from "../InputForm/InputForm"
 import { fetchData } from '../../apiCalls';
 
@@ -8,7 +10,13 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      wordList: [],
+      wordList: [{
+        id: 1668366024888,
+        noun: {
+          syn: ["hello", "hullo", "howdy", "how-do-you-do", "Hawaii", "Hawai'i", "Aloha State", "HI", "American state", "greeting", "salutation"]
+        },
+        word: "hi"
+      }],
       savedForLater: [],
       errorMessage: ''
     }
@@ -32,12 +40,12 @@ class App extends Component {
   //save method (need to pass into MainContainer)
   
   render() {
+    console.log(this.state)
     return (
       <main className='home'>
-        <h1>I want to make a header/title card</h1>
-        <Form  searchWord={this.searchWord} />
+        <Header searchWord={this.searchWord}/>
         <MainContainer wordList={this.state.wordList} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
-        <h2>This will be a footer</h2>
+        <Footer />
       </main>
     );
   }

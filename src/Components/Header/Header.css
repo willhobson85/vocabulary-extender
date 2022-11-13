@@ -1,0 +1,21 @@
+.app-head {
+  height: 25vh;
+  width: 100vw;
+  background-image: url('../../Assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #7A88B8;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 1vh;
+}
+
+.goToSaved {
+  margin-left: 3vw;
+}
+
+.search-box {
+  margin-right: 3vw;
+}
