@@ -1,5 +1,4 @@
 .app-head {
-  border: 2px solid black;
   height: 25vh;
   width: 100vw;
   background-image: url('../../Assets/logo.png');
@@ -10,8 +9,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  padding-bottom: 1vh;
 }
 
 .goToSaved {
   margin-left: 3vw;
+}
+
+.search-box {
+  margin-right: 3vw;
 }

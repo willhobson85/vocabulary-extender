@@ -6,8 +6,8 @@ const Header = ({ searchWord }) => {
   // I want a logo, my saved button, and the word search
   return (
     <header className="app-head">
-      <button className="goToSaved">Saved</button>
-      {/* <Form searchWord={this.searchWord}/> */}
+      <button className="goToSaved">Saved Words</button>
+      <Form className="search-box" searchWord={searchWord}/>
     </header>
   )
 }

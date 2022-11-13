@@ -10,7 +10,13 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      wordList: [],
+      wordList: [{
+        id: 1668366024888,
+        noun: {
+          syn: ["hello", "hullo", "howdy", "how-do-you-do", "Hawaii", "Hawai'i", "Aloha State", "HI", "American state", "greeting", "salutation"]
+        },
+        word: "hi"
+      }],
       savedForLater: [],
       errorMessage: ''
     }
@@ -34,10 +40,10 @@ class App extends Component {
   //save method (need to pass into MainContainer)
   
   render() {
+    console.log(this.state)
     return (
       <main className='home'>
         <Header searchWord={this.searchWord}/>
-        {/* <Form  searchWord={this.searchWord} /> */}
         <MainContainer wordList={this.state.wordList} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
         <Footer />
       </main>
