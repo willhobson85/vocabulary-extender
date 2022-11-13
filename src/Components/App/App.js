@@ -17,7 +17,7 @@ class App extends Component {
         },
         word: "hi"
       }],
-      savedForLater: [],
+      savedWords: [],
       errorMessage: ''
     }
   }
@@ -37,14 +37,17 @@ class App extends Component {
     this.setState({wordList: removeTile})
   }
 
-  //save method (need to pass into MainContainer)
+  saveTile = (id) => {
+    const saveCard = this.state.wordList.filter(card => card.id === id)
+    this.setState({savedWords: [...this.state.savedWords, saveCard]})
+  }
   
   render() {
     console.log(this.state)
     return (
       <main className='home'>
         <Header searchWord={this.searchWord}/>
-        <MainContainer wordList={this.state.wordList} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
+        <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
         <Footer />
       </main>
     );
