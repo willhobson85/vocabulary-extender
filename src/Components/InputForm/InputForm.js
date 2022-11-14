@@ -29,15 +29,16 @@ class Form extends Component {
 
   render() {
     return (
-      <form className="input-form">
+      <form className="input-form" onSubmit={event => this.getWord(event)}>
          <input
-                type='text'
-                placeholder='Find a word'
-                name='word'
-                value={this.state.word}
-                onChange={event => this.handleChange(event)}
-                />
-                <button onClick={event => this.getWord(event)}>Search</button>
+            type='text'
+            placeholder='Find a word'
+            name='word'
+            required
+            value={this.state.word}
+            onChange={event => this.handleChange(event)}
+            />
+          <button value="Search" type='submit'>Search</button>
       </form>
     )
   }
