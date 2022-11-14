@@ -74,7 +74,7 @@ You can also view the deployed link [here](https://vocabulary-extender.vercel.ap
 
 ## Usage
 
-![Vocabulary Extender](https://user-images.githubusercontent.com/99286590/201571682-34a40d0c-131f-4225-8676-65e9d6ced458.mov)
+![VocabularyExtender](https://user-images.githubusercontent.com/99286590/201572382-c38664c4-8d3a-47c4-a407-acef70fbbe58.gif)
 
 Future Features:
 - Implement a local storage to save cards upon refresh.
