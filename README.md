@@ -123,4 +123,4 @@ The following resources helped us build this project:
 
 [mdn-shield]: https://img.shields.io/badge/MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white
 [mdn]: https://developer.mozilla.org/en-US/
-[contributors-shield]: https://img.shields.io/badge/Contributors-4-2ea44f?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/Contributors-1-2ea44f?style=for-the-badge
