@@ -43,19 +43,27 @@ class App extends Component {
   }
 
   saveTile = (id) => {
-    const saveCard = this.state.wordList.filter(card => card.id === id).flat()
-    this.setState({savedWords: [...this.state.savedWords, saveCard[0]]})
+    if(!this.state.savedWords.find(card => card.id)) {
+      const saveCard = this.state.wordList.filter(card => card.id === id).flat()
+    
+      this.setState({savedWords: [...this.state.savedWords, saveCard[0]]})
+    } else {
+      alert('already saved')
+    }
+  }
+
+  unsaveWord = (id) => {
+    const unsave = this.state.savedWords.filter(card => card.id !== id)
+    this.setState({savedWords: unsave})
   }
   
   render() {
-    console.log('saved words', this.state.savedWords)
-    console.log('word list', this.state.wordList)
     return (
       <main className='home'>
           <Header searchWord={this.searchWord}/>
           <Switch>
-            <Route exact path="/savedPage" render={() => <SavedContainer savedWords={this.state.savedWords} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />} />
-            <Route path="/" render={() => <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />} />
+            <Route exact path="/savedPage" render={() => <SavedContainer savedWords={this.state.savedWords} saveTile={this.saveTile} unsaveWord={this.unsaveWord} />} />
+            <Route path="/" render={() => <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} />} />
           </Switch>
           <Footer />
       </main>
