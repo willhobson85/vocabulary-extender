@@ -68,6 +68,7 @@ class App extends Component {
   }
   
   render() {
+    console.log(this.state.wordList)
     return (
       <main className='home'>
           <Header searchWord={this.searchWord}/>
