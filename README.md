@@ -90,8 +90,6 @@ I utilized testing to create a smooth user experience using [Cypress](https://ww
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Reflections
 
 I thought this would be an easy and straightforward project to complete. While the functionality is simple, I was not expecting the API data to be as complicated as it was. I decided to return up to four parts of speech for each word (adjective, noun, verb, and adverb). The most challenging part of the project was getting the cards to display if they did not have one of the parts of speech, as I was getting errors rendering the data, and kept running into road blocks with my conditional rendering. This was also my first time writing Routers without a partner, which created a bit of frustration, but was very satisfying when it was completed.
