@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import Form from "../InputForm/InputForm"
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 const Header = ({ searchWord }) => {
-  // I want a logo, my saved button, and the word search
+
   return (
     <header className="app-head">
-      <button className="goToSaved">Saved Words</button>
+      <div className="navigation">
+        <Link to="/">
+          <button className="goHome">All Words</button>
+        </Link>
+        <Link to="/savedPage">
+          <button className="goToSaved">Saved Words</button>
+        </Link>
+      </div>
       <Form className="search-box" searchWord={searchWord}/>
     </header>
   )

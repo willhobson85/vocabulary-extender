@@ -1,7 +1,7 @@
 import React from "react";
 import './Tile.css'
 
-function Tile( {props, removeTile} ) {
+function Tile( {props, removeTile, saveTile} ) {
   const displayResults = (partOfSpeech) => {
     let synonyms = ''
     let antonyms = ''
@@ -40,7 +40,7 @@ function Tile( {props, removeTile} ) {
           {displayResults('adverb')}
           {displayResults('verb')}
           <div className="buttons">
-            <button className='saveButton'>Save for later</button>
+            <button className='saveButton' onClick={() => saveTile(props.id)}>Save for later</button>
             <button className='removeButton' onClick={() => removeTile(props.id)}>Remove</button>
           </div>
       </div>

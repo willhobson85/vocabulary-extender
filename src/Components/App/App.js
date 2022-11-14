@@ -1,23 +1,28 @@
 import './App.css';
 import React, { Component } from 'react';
 import MainContainer from '../MainPage/MainPage';
+import SavedContainer from '../SavedPage/SavedPage';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Form from "../InputForm/InputForm"
 import { fetchData } from '../../apiCalls';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       wordList: [{
-        id: 1668366024888,
         noun: {
           syn: ["hello", "hullo", "howdy", "how-do-you-do", "Hawaii", "Hawai'i", "Aloha State", "HI", "American state", "greeting", "salutation"]
         },
+        id: 1668366024888,
         word: "hi"
       }],
-      savedForLater: [],
+      savedWords: [],
       errorMessage: ''
     }
   }
@@ -37,19 +42,26 @@ class App extends Component {
     this.setState({wordList: removeTile})
   }
 
-  //save method (need to pass into MainContainer)
+  saveTile = (id) => {
+    const saveCard = this.state.wordList.filter(card => card.id === id).flat()
+    this.setState({savedWords: [...this.state.savedWords, saveCard[0]]})
+  }
   
   render() {
-    console.log(this.state)
+    console.log('saved words', this.state.savedWords)
+    console.log('word list', this.state.wordList)
     return (
       <main className='home'>
-        <Header searchWord={this.searchWord}/>
-        <MainContainer wordList={this.state.wordList} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />
-        <Footer />
+          <Header searchWord={this.searchWord}/>
+          <Switch>
+            <Route exact path="/savedPage" render={() => <SavedContainer savedWords={this.state.savedWords} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />} />
+            <Route path="/" render={() => <MainContainer wordList={this.state.wordList} saveTile={this.saveTile} removeTile={this.removeTile} errorMessage={this.state.errorMessage} />} />
+          </Switch>
+          <Footer />
       </main>
     );
   }
-
+  
 }
 
 export default App;
