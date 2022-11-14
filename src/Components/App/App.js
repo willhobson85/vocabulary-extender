@@ -15,13 +15,23 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      wordList: [{
-        noun: {
-          syn: ["hello", "hullo", "howdy", "how-do-you-do", "Hawaii", "Hawai'i", "Aloha State", "HI", "American state", "greeting", "salutation"]
-        },
-        id: 1668366024888,
-        word: "hi"
-      }],
+      wordList: [
+        {
+          noun: {
+            syn: ["hello", "hullo", "howdy", "how-do-you-do", "Hawaii", "Hawai'i", "Aloha State", "HI", "American state", "greeting", "salutation"]
+          },
+          id: 1668366024888,
+          word: "hi"
+        }, {
+          noun: {
+            ant: ["foe"],
+            syn: ["ally", "acquaintance", "supporter", "protagonist", "champion", "admirer", "booster", "Friend", "Quaker", "advocate", "advocator", "associate", "Christian", "exponent", "individual", "mortal", "person", "proponent", "somebody", "someone", "soul"]
+          },
+            word: "friend",
+            id: 1668366024889
+        }
+        
+      ],
       savedWords: [],
       errorMessage: ''
     }
