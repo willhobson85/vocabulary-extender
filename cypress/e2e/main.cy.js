@@ -39,9 +39,9 @@ describe('empty spec', () => {
   })
 
   it('should be able to create new tiles', () => {
+    cy.visit('http://localhost:3000/')
     cy.get('input').type('test')
     cy.get('.input-form > button').click()
-    cy.intercept('GET', 'https://words.bighugelabs.com/api/2/7a9c00d2294b26bf6e0405670492c80c/stub/json', {fixture: 'sampleSearch.json'})
     .wait(1000)
     cy.get('.tile-container > :nth-child(3)')
     .should('exist')
