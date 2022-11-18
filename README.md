@@ -64,7 +64,8 @@ You can find the project [here](https://github.com/willhobson85/vocabulary-exten
    npm install
    npm start
    ```
-3. Explore the website.
+3. Obtain a Big Huge Thesaurus API key [here](https://words.bighugelabs.com/site/api).
+4. You will need to create an .env file in the root directory with contents like this:REACT_APP_API_KEY=<api_key_value_here> .
 
 You can also view the deployed link [here](https://vocabulary-extender.vercel.app/)
 
