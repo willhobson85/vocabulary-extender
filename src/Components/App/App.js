@@ -40,6 +40,7 @@ class App extends Component {
   searchWord = (word) => {
     fetchData(word.word)
     .then(data => {
+      console.log(data)
       data.id = word.id
       data.word = word.word
       this.setState({wordList: [...this.state.wordList, data]})
