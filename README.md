@@ -27,7 +27,6 @@ This app is designed to help the every day user extend their vocabulary, by sear
 
 The Vocabulary Extender (module 3 showcase project) was built in week 17 of [Turing School of Software and Design](https://turing.edu/) front-end engineering program. The goals of this [solo project](https://frontend.turing.edu/projects/module-3/showcase.html) were to:
 
-EDIT BELOW AS NEEDED BASED ON SPEC
 - Utilize React and React Router
 - Test the UI/UX using Cypress
 - Utilize Lighthouse and Wave for accessibility
